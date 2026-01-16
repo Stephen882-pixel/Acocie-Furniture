@@ -50,4 +50,10 @@ export const CartProvider = ({ children }) => {
     const getCartTotal = () => {
         return cartItems.reduce((total, item) => total + (item.price * item.quantity),0);
     };
+
+    const getCartCount = () => {
+        return cartItems.reduce((count, item) => count + item.quantity,0);
+    };
+
+    
 }
