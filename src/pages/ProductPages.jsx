@@ -13,6 +13,12 @@ const ProductsPage = () => {
     const filteredProducts = useMemo(() => {
         let filtered = [...allProducts];
 
+        if(searchItem){
+            filtered = filtered.filter(product => 
+                product.name.toLowerCase().includes(searchItem.toLowerCase())
+            );
+        }
+
         
     })
 }
