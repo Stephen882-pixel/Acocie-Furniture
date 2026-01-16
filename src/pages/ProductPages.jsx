@@ -19,6 +19,10 @@ const ProductsPage = () => {
             );
         }
 
+        if(selectedCategory !== 'all'){
+            filtered = filtered.filter(product => product.category === selectedCategory);
+        }
+
         
     })
 }
