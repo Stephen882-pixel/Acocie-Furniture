@@ -23,6 +23,10 @@ const ProductsPage = () => {
             filtered = filtered.filter(product => product.category === selectedCategory);
         }
 
+        filtered = filtered.filter(
+            product => product.price >= priceRange[0] && product.price <= selectedCategory[1]
+        );
+
         
     })
 }
