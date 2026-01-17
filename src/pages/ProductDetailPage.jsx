@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { getProductById, productDetails } from "../data/mockData";
+import NewsLetter from "../components/common/Newsletter";
 
 const productDetailPage = () => {
   const { id } = useParams();
@@ -273,6 +274,10 @@ const productDetailPage = () => {
             </div>
           </div>
         </div>
+      </div>
+      {/* Newsletter Section  */}
+      <div className="mt-12">
+        <NewsLetter variant="compact" />
       </div>
     </div>
   );

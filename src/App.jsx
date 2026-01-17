@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import AccountPage from "./pages/AccountPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
+import NewsletterModal from "./components/common/NewsletterModal";
 
 function App() {
   return (
@@ -57,6 +58,9 @@ function App() {
 
             {/* Footer */}
             <Footer />
+
+            {/* Newsletter Modal - Shows after 5 seconds */}
+            <NewsletterModal />
           </div>
         </Router>
       </CartProvider>
