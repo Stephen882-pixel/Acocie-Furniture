@@ -308,3 +308,21 @@ export const productDetails = {
 export const getProductById = (id) => {
   return allProducts.find(product => product.id === parseInt(id));
 };
+
+
+export const getAvarageRating = (productId) => {
+  const details = productDetails[productId];
+  if(!details || !details.ratingBreakdown) return 0;
+
+
+  const breakdown = details.ratingBreakdown;
+  let totalRating = 0;
+  let totalReviews = 0;
+
+  for(let rating = 1;rating <= 5;rating++){
+    totalRating += rating * (breakdown[rating] || 0);
+    totalReviews += breakdown[rating] || 0;
+  }
+  return totalReviews > 0 ? (totalRating / totalReviews).toFixed(1) : 0;
+};
+
