@@ -11,10 +11,18 @@ import {
   RotateCcw,
 } from "lucide-react";
 import { useCart } from "../context/CartContext";
-import { getProductById, productDetails } from "../data/mockData";
-import NewsLetter from "../components/common/Newsletter";
+import {
+  getProductById,
+  productDetails,
+  getAverageRating,
+  getTotalReviews,
+} from "../data/mockData";
+import StarRating from "../components/product/StarRating";
+import ReviewSummary from "../components/product/ReviewSummary";
+import ReviewList from "../components/product/ReviewList";
+import ReviewForm from "../components/product/ReviewForm";
 
-const productDetailPage = () => {
+const ProductDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
@@ -23,6 +31,8 @@ const productDetailPage = () => {
 
   const product = getProductById(id);
   const details = productDetails[id] || {};
+  const averageRating = getAverageRating(id);
+  const totalReviews = getTotalReviews(id);
 
   if (!product) {
     return (
@@ -45,6 +55,11 @@ const productDetailPage = () => {
       addToCart(product);
     }
     setQuantity(1);
+  };
+
+  const handleReviewSubmit = (review) => {
+    console.log("New review submitted:", review);
+    // In a real app, this would call an API
   };
 
   return (
@@ -87,21 +102,17 @@ const productDetailPage = () => {
                   {product.name}
                 </h1>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-5 h-5 ${
-                          i < Math.floor(product.rating)
-                            ? "text-yellow-400 fill-current"
-                            : "text-gray-300"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-gray-600">
-                    {product.rating} ({product.reviews} reviews)
-                  </span>
+                  <StarRating
+                    rating={parseFloat(averageRating)}
+                    size="md"
+                    showNumber={true}
+                  />
+                  <button
+                    onClick={() => setActiveTab("reviews")}
+                    className="text-orange-500 hover:text-orange-600 text-sm font-medium"
+                  >
+                    ({totalReviews} reviews)
+                  </button>
                 </div>
                 <p className="text-4xl font-bold text-gray-900">
                   ${product.price}
@@ -202,6 +213,7 @@ const productDetailPage = () => {
                       }`}
                     >
                       {tab}
+                      {tab === "reviews" && ` (${totalReviews})`}
                     </button>
                   ))}
                 </div>
@@ -209,6 +221,7 @@ const productDetailPage = () => {
             </div>
 
             <div className="p-8">
+              {/* Description Tab */}
               {activeTab === "description" && details.features && (
                 <div>
                   <h3 className="text-xl font-bold mb-4">Key Features</h3>
@@ -223,6 +236,7 @@ const productDetailPage = () => {
                 </div>
               )}
 
+              {/* Specifications Tab */}
               {activeTab === "specifications" && details.specifications && (
                 <div>
                   <h3 className="text-xl font-bold mb-4">Specifications</h3>
@@ -239,48 +253,51 @@ const productDetailPage = () => {
                 </div>
               )}
 
-              {activeTab === "reviews" && details.reviews && (
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Customer Reviews</h3>
-                  <div className="space-y-6">
-                    {details.reviews.map((review) => (
-                      <div key={review.id} className="border-b pb-6">
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-2">
-                            <span className="font-medium">{review.author}</span>
-                            <div className="flex items-center">
-                              {[...Array(5)].map((_, i) => (
-                                <Star
-                                  key={i}
-                                  className={`w-4 h-4 ${
-                                    i < review.rating
-                                      ? "text-yellow-400 fill-current"
-                                      : "text-gray-300"
-                                  }`}
-                                />
-                              ))}
-                            </div>
-                          </div>
-                          <span className="text-sm text-gray-500">
-                            {review.date}
-                          </span>
-                        </div>
-                        <p className="text-gray-700">{review.comment}</p>
-                      </div>
-                    ))}
-                  </div>
+              {/* Reviews Tab */}
+              {activeTab === "reviews" && (
+                <div className="space-y-8">
+                  {/* Review Summary */}
+                  {details.ratingBreakdown && (
+                    <ReviewSummary
+                      ratingBreakdown={details.ratingBreakdown}
+                      averageRating={averageRating}
+                      totalReviews={totalReviews}
+                    />
+                  )}
+
+                  {/* Write Review Form */}
+                  <ReviewForm
+                    productName={product.name}
+                    onSubmit={handleReviewSubmit}
+                  />
+
+                  {/* Reviews List */}
+                  {details.reviews && details.reviews.length > 0 && (
+                    <div>
+                      <h3 className="text-2xl font-bold mb-6">
+                        Customer Reviews
+                      </h3>
+                      <ReviewList reviews={details.reviews} />
+                    </div>
+                  )}
+
+                  {/* No Reviews Message */}
+                  {(!details.reviews || details.reviews.length === 0) && (
+                    <div className="text-center py-12">
+                      <p className="text-gray-500 mb-4">No reviews yet</p>
+                      <p className="text-sm text-gray-400">
+                        Be the first to review this product!
+                      </p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
           </div>
         </div>
       </div>
-      {/* Newsletter Section  */}
-      <div className="mt-12">
-        <NewsLetter variant="compact" />
-      </div>
     </div>
   );
 };
 
-export default productDetailPage;
+export default ProductDetailPage;
