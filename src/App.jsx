@@ -12,6 +12,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import LoginPage from "./pages/LoginPage";
 import AccountPage from "./pages/AccountPage";
 import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
 
                 {/* Contact Page  */}
                 <Route path="/contact" element={<ContactPage />} />
+
+                {/* About Page  */}
+                <Route path="/about" element={<AboutPage />} />
               </Routes>
             </main>
 

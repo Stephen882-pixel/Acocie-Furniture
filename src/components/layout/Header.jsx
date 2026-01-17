@@ -43,12 +43,12 @@ const Header = () => {
             >
               Products
             </button>
-            <a
-              href="#"
+            <button
+              onClick={() => handleNavigation("/about")}
               className="text-gray-600 hover:text-orange-500 transition-colors"
             >
               About
-            </a>
+            </button>
             <button
               onClick={() => handleNavigation("/contact")}
               className="text-gray-600 hover:text-orange-500 transition-colors"
@@ -140,13 +140,12 @@ const Header = () => {
                 </button>
               )}
 
-              <a
-                href="#"
-                className="text-gray-600 hover:text-orange-500 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                onClick={() => handleNavigation("/about")}
+                className="text-gray-600 hover:text-orange-500 text-left transition-colors"
               >
                 About
-              </a>
+              </button>
 
               <button
                 onClick={() => handleNavigation("/contact")}
