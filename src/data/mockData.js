@@ -127,16 +127,69 @@ export const productDetails = {
         author: "Sarah M.",
         rating: 5,
         date: "2024-01-15",
-        comment: "Absolutely love this desk! The quality is outstanding and it looks beautiful in my home office."
+        verified: true,
+        title: "Outstanding Quality!",
+        comment: "Absolutely love this desk! The quality is outstanding and it looks beautiful in my home office. The oak finish is gorgeous and the drawers are very spacious. Assembly was straightforward with clear instructions.",
+        helpful: 24,
+        notHelpful: 2,
+        images: []
       },
       {
         id: 2,
         author: "John D.",
         rating: 4,
         date: "2024-01-10",
-        comment: "Great desk, very sturdy. Assembly took a bit longer than expected but worth it."
+        verified: true,
+        title: "Great desk, minor assembly issues",
+        comment: "Great desk, very sturdy. Assembly took a bit longer than expected but worth it. The cable management system is genius! Only gave 4 stars because one of the drawer slides was slightly misaligned.",
+        helpful: 18,
+        notHelpful: 1,
+        images: []
+      },
+      {
+        id: 3,
+        author: "Emily R.",
+        rating: 5,
+        date: "2024-01-05",
+        verified: true,
+        title: "Perfect for my home office",
+        comment: "This desk has completely transformed my home office. The size is perfect, and the build quality is exceptional. I particularly love the cable management feature - keeps everything neat and tidy!",
+        helpful: 31,
+        notHelpful: 0,
+        images: []
+      },
+      {
+        id: 4,
+        author: "Michael T.",
+        rating: 3,
+        date: "2023-12-28",
+        verified: false,
+        title: "Good but pricey",
+        comment: "The desk is well-made and looks great, but I think it's a bit overpriced for what you get. That said, the quality is definitely there and it should last for years.",
+        helpful: 7,
+        notHelpful: 12,
+        images: []
+      },
+      {
+        id: 5,
+        author: "Lisa K.",
+        rating: 5,
+        date: "2023-12-20",
+        verified: true,
+        title: "Best purchase this year!",
+        comment: "I was hesitant about the price, but this desk exceeded all my expectations. The craftsmanship is superb, and it's incredibly sturdy. My only regret is not buying it sooner!",
+        helpful: 45,
+        notHelpful: 1,
+        images: []
       }
-    ]
+    ],
+    ratingBreakdown: {
+      5: 89,
+      4: 28,
+      3: 5,
+      2: 1,
+      1: 1
+    }
   },
   2: {
     description: "Experience ultimate comfort with our Ergonomic Pro Chair. Designed for long work sessions, this chair features adjustable lumbar support, breathable mesh back, and customizable armrests to reduce strain and boost productivity.",
@@ -160,9 +213,45 @@ export const productDetails = {
         author: "Mike R.",
         rating: 5,
         date: "2024-01-18",
-        comment: "Best chair I've ever owned. My back pain is gone after switching to this!"
+        verified: true,
+        title: "My back pain is gone!",
+        comment: "Best chair I've ever owned. My back pain is gone after switching to this! The lumbar support is adjustable and really makes a difference. Highly recommend for anyone working long hours.",
+        helpful: 67,
+        notHelpful: 2,
+        images: []
+      },
+      {
+        id: 2,
+        author: "Jennifer L.",
+        rating: 5,
+        date: "2024-01-12",
+        verified: true,
+        title: "Worth every penny",
+        comment: "After months of research, I finally chose this chair and I'm so glad I did. The mesh back keeps me cool, and all the adjustments mean I can get it just right. Game changer for WFH!",
+        helpful: 52,
+        notHelpful: 1,
+        images: []
+      },
+      {
+        id: 3,
+        author: "Tom S.",
+        rating: 4,
+        date: "2024-01-08",
+        verified: true,
+        title: "Great chair, slight learning curve",
+        comment: "The chair is excellent quality and very comfortable once you get all the adjustments right. Took me a few days to dial in the perfect settings, but now it's perfect.",
+        helpful: 23,
+        notHelpful: 3,
+        images: []
       }
-    ]
+    ],
+    ratingBreakdown: {
+      5: 178,
+      4: 22,
+      3: 2,
+      2: 1,
+      1: 0
+    }
   },
   3: {
     description: "Transform your living room with this luxurious modern L-shaped sofa. Premium fabric upholstery and solid wood frame ensure both comfort and durability for years to come.",
@@ -186,9 +275,33 @@ export const productDetails = {
         author: "Emily K.",
         rating: 5,
         date: "2024-01-12",
-        comment: "This sofa is perfect! So comfortable and looks amazing in our living room."
+        verified: true,
+        title: "Perfect family sofa!",
+        comment: "This sofa is perfect! So comfortable and looks amazing in our living room. The whole family loves it, and it fits perfectly in our space. Great quality for the price.",
+        helpful: 41,
+        notHelpful: 1,
+        images: []
+      },
+      {
+        id: 2,
+        author: "David P.",
+        rating: 4,
+        date: "2024-01-06",
+        verified: true,
+        title: "Comfortable and stylish",
+        comment: "Very happy with this purchase. The sofa is comfortable and looks great. Only minor complaint is that the cushions need fluffing regularly, but that's expected with this style.",
+        helpful: 28,
+        notHelpful: 2,
+        images: []
       }
-    ]
+    ],
+    ratingBreakdown: {
+      5: 67,
+      4: 18,
+      3: 3,
+      2: 1,
+      1: 0
+    }
   }
 };
 
