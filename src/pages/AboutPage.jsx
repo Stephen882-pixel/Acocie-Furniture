@@ -9,6 +9,7 @@ import {
   Leaf,
   Truck,
 } from "lucide-react";
+import NewsLetter from "../components/common/Newsletter";
 
 const AboutPage = () => {
   const stats = [
@@ -388,6 +389,14 @@ const AboutPage = () => {
         </div>
       </div>
 
+      {/* Newsletter Section */}
+
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Newsletter variant="default" />
+        </div>
+      </div>
+
       {/* Call to Action Section */}
       <div className="bg-gradient-to-r from-orange-500 to-orange-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -419,4 +428,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
