@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ShoppingCart, Menu, X, User } from 'lucide-react';
+import { ShoppingCart, Menu, X, User } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 import { useUser } from "../../context/UserContext";
 
@@ -115,12 +115,31 @@ const Header = () => {
               >
                 Home
               </button>
+
               <button
                 onClick={() => handleNavigation("/products")}
                 className="text-gray-600 hover:text-orange-500 text-left transition-colors"
               >
                 Products
               </button>
+
+              {/* ✅ ADD THIS */}
+              {isAuthenticated ? (
+                <button
+                  onClick={() => handleNavigation("/account")}
+                  className="text-gray-600 hover:text-orange-500 text-left transition-colors"
+                >
+                  My Account
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleNavigation("/login")}
+                  className="text-gray-600 hover:text-orange-500 text-left transition-colors"
+                >
+                  Login
+                </button>
+              )}
+
               <a
                 href="#"
                 className="text-gray-600 hover:text-orange-500 transition-colors"
@@ -128,6 +147,7 @@ const Header = () => {
               >
                 About
               </a>
+
               <a
                 href="#"
                 className="text-gray-600 hover:text-orange-500 transition-colors"
