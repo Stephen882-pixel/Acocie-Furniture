@@ -49,12 +49,12 @@ const Header = () => {
             >
               About
             </a>
-            <a
-              href="#"
+            <button
+              onClick={() => handleNavigation("/contact")}
               className="text-gray-600 hover:text-orange-500 transition-colors"
             >
               Contact
-            </a>
+            </button>
           </nav>
 
           {/* Right Side - Cart and Mobile Menu */}
@@ -148,13 +148,12 @@ const Header = () => {
                 About
               </a>
 
-              <a
-                href="#"
+              <button
+                onClick={() => handleNavigation("/contact")}
                 className="text-gray-600 hover:text-orange-500 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
-              </a>
+              </button>
             </nav>
           </div>
         )}
