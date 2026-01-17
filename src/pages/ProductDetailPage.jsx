@@ -14,7 +14,7 @@ import { useCart } from "../context/CartContext";
 import {
   getProductById,
   productDetails,
-  getAverageRating,
+  getAvarageRating,
   getTotalReviews,
 } from "../data/mockData";
 import StarRating from "../components/product/StarRating";
@@ -31,7 +31,7 @@ const ProductDetailPage = () => {
 
   const product = getProductById(id);
   const details = productDetails[id] || {};
-  const averageRating = getAverageRating(id);
+  const averageRating = getAvarageRating(id);
   const totalReviews = getTotalReviews(id);
 
   if (!product) {
