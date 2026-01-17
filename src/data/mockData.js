@@ -102,3 +102,96 @@ export const allProducts = [
     inStock: false
   }
 ];
+
+
+export const productDetails = {
+  1: {
+    description: "Elevate your workspace with our Executive Oak Desk. Crafted from premium solid oak, this desk combines timeless elegance with modern functionality. Features include built-in cable management, a spacious work surface, and three drawers for optimal organization.",
+    features: [
+      "Solid oak construction",
+      "Built-in cable management system",
+      "Three spacious drawers",
+      "Scratch-resistant surface",
+      "Easy assembly with included tools"
+    ],
+    specifications: {
+      "Dimensions": "60\" W x 30\" D x 30\" H",
+      "Material": "Solid Oak Wood",
+      "Weight": "120 lbs",
+      "Color": "Natural Oak",
+      "Assembly": "Required (approx. 45 min)"
+    },
+    reviews: [
+      {
+        id: 1,
+        author: "Sarah M.",
+        rating: 5,
+        date: "2024-01-15",
+        comment: "Absolutely love this desk! The quality is outstanding and it looks beautiful in my home office."
+      },
+      {
+        id: 2,
+        author: "John D.",
+        rating: 4,
+        date: "2024-01-10",
+        comment: "Great desk, very sturdy. Assembly took a bit longer than expected but worth it."
+      }
+    ]
+  },
+  2: {
+    description: "Experience ultimate comfort with our Ergonomic Pro Chair. Designed for long work sessions, this chair features adjustable lumbar support, breathable mesh back, and customizable armrests to reduce strain and boost productivity.",
+    features: [
+      "Adjustable lumbar support",
+      "Breathable mesh backrest",
+      "Height-adjustable seat",
+      "4D adjustable armrests",
+      "Smooth-rolling casters"
+    ],
+    specifications: {
+      "Dimensions": "26\" W x 26\" D x 45\" H",
+      "Material": "Mesh & Premium Foam",
+      "Weight Capacity": "300 lbs",
+      "Color": "Black",
+      "Warranty": "2 years"
+    },
+    reviews: [
+      {
+        id: 1,
+        author: "Mike R.",
+        rating: 5,
+        date: "2024-01-18",
+        comment: "Best chair I've ever owned. My back pain is gone after switching to this!"
+      }
+    ]
+  },
+  3: {
+    description: "Transform your living room with this luxurious modern L-shaped sofa. Premium fabric upholstery and solid wood frame ensure both comfort and durability for years to come.",
+    features: [
+      "Premium fabric upholstery",
+      "Removable cushions for easy cleaning",
+      "Solid wood frame",
+      "Deep seating for maximum comfort",
+      "Modern contemporary design"
+    ],
+    specifications: {
+      "Dimensions": "95\" W x 68\" D x 35\" H",
+      "Material": "Fabric & Solid Wood",
+      "Seating Capacity": "5-6 people",
+      "Color": "Light Gray",
+      "Assembly": "Minimal assembly required"
+    },
+    reviews: [
+      {
+        id: 1,
+        author: "Emily K.",
+        rating: 5,
+        date: "2024-01-12",
+        comment: "This sofa is perfect! So comfortable and looks amazing in our living room."
+      }
+    ]
+  }
+};
+
+export const getProductById = (id) => {
+  return allProducts.find(product => product.id === parseInt(id));
+};
