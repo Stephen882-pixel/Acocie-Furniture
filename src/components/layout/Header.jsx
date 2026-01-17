@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ShoppingCart, Menu, X } from "lucide-react";
+import { ShoppingCart, Menu, X, User } from 'lucide-react';
 import { useCart } from "../../context/CartContext";
+import { useUser } from "../../context/UserContext";
 
 const Header = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { getCartCount } = useCart();
+  const { isAuthenticated } = useUser();
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -69,6 +71,25 @@ const Header = () => {
                 </span>
               )}
             </button>
+
+            {/* Account Button */}
+            {isAuthenticated ? (
+              <button
+                onClick={() => handleNavigation("/account")}
+                className="hidden md:flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-orange-500 transition-colors"
+              >
+                <User className="w-5 h-5" />
+                <span>Account</span>
+              </button>
+            ) : (
+              <button
+                onClick={() => handleNavigation("/login")}
+                className="hidden md:flex items-center gap-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors"
+              >
+                <User className="w-5 h-5" />
+                <span>Login</span>
+              </button>
+            )}
 
             {/* Mobile Menu Toggle */}
             <button
