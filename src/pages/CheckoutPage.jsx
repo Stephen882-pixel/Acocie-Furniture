@@ -22,5 +22,22 @@ const CheckoutPage = () => {
     cvv: "",
   });
 
+  const handleChange = (e) => {
+    setFormData({
+        ...formData,
+        [e.target.name]:e.target.value
+    });
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setOrderPlaced(true);
+    setTimeout(() => {
+        clearCart();
+        navigate('/');
+    },3000);
+  };
+
   
 };
