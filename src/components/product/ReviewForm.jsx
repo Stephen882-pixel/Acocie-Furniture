@@ -13,5 +13,13 @@ const ReviewForm = ({ productName, onsubmit }) => {
     recommend: true,
   });
 
+  const handleChange = (e) => {
+    setFormData({
+        ...formData,
+        [e.target.name]:e.target.value
+    });
+  };
+
+
   
 };
