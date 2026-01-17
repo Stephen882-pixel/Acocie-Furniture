@@ -326,3 +326,10 @@ export const getAvarageRating = (productId) => {
   return totalReviews > 0 ? (totalRating / totalReviews).toFixed(1) : 0;
 };
 
+export const getTotalReviews = (productId) => {
+  const details = productDetails[productId];
+  if(!details || !details.ratingBreakdown) return 0;
+
+  return Object.values(details.ratingBreakdown).reduce((sum,count) => sum + count, 0);
+};
+
