@@ -1,9 +1,28 @@
 import React from 'react';
+import Newsletter from '../common/Newsletter';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-white">
+      {/* Newsletter Section */}
+      <div className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Join Our Newsletter</h3>
+              <p className="text-gray-400">
+                Subscribe to get special offers, free giveaways, and exclusive deals.
+              </p>
+            </div>
+            <div>
+              <Newsletter variant="inline" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Acocie Furnitures</h3>

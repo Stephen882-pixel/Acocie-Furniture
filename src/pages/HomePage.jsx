@@ -4,7 +4,7 @@ import FeaturesSection from "../components/home/FeaturesSection";
 import CategoryCard from "../components/common/CategoryCard";
 import ProductCard from "../components/common/ProductCard";
 import { categories, featuredProducts } from "../data/mockData";
-import NewsLetter from "./Newsletter";
+import NewsLetter from "../components/common/Newsletter";
 
 const HomePage = () => {
   return (
