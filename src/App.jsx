@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
-import { UserProvider } from './context/UserContext';
+import { UserProvider } from "./context/UserContext";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import HomePage from "./pages/HomePage";
@@ -11,6 +11,7 @@ import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import LoginPage from "./pages/LoginPage";
 import AccountPage from "./pages/AccountPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
 
                 {/* Account Page */}
                 <Route path="/account" element={<AccountPage />} />
+
+                {/* Contact Page  */}
+                <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </main>
 
