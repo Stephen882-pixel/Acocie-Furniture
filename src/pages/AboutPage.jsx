@@ -77,4 +77,37 @@ const AboutPage = () => {
       bio: 'David spearheads our sustainability initiatives, ensuring eco-friendly practices in all our processes.'
     }
   ];
+
+    const timeline = [
+    {
+      year: '2014',
+      title: 'The Beginning',
+      description: 'Acocie Furnitures was founded with a vision to make quality furniture accessible to everyone.'
+    },
+    {
+      year: '2016',
+      title: 'First Showroom',
+      description: 'Opened our flagship showroom in New York, showcasing our complete furniture collection.'
+    },
+    {
+      year: '2018',
+      title: 'Going Digital',
+      description: 'Launched our e-commerce platform, reaching customers nationwide with seamless online shopping.'
+    },
+    {
+      year: '2020',
+      title: 'Sustainability Initiative',
+      description: 'Committed to 100% sustainable sourcing and launched our eco-friendly furniture line.'
+    },
+    {
+      year: '2022',
+      title: 'Expansion',
+      description: 'Expanded to 5 showrooms across major cities and partnered with local craftsmen.'
+    },
+    {
+      year: '2024',
+      title: 'Innovation Award',
+      description: 'Received the National Furniture Innovation Award for our smart furniture designs.'
+    }
+  ];
 };
