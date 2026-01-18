@@ -9,6 +9,7 @@ import {
   Truck,
   Shield,
   RotateCcw,
+  Heart,
 } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import {
@@ -21,11 +22,14 @@ import StarRating from "../components/product/StarRating";
 import ReviewSummary from "../components/product/ReviewSummary";
 import ReviewList from "../components/product/ReviewList";
 import ReviewForm from "../components/product/ReviewForm";
+import { useWishList } from "../context/WishlistContext";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const inWishlist = isInWishlist(product.id);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("description");
 
@@ -60,6 +64,14 @@ const ProductDetailPage = () => {
   const handleReviewSubmit = (review) => {
     console.log("New review submitted:", review);
     // In a real app, this would call an API
+  };
+
+  const handleWishlistToggle = () => {
+    if(inWishlist){
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
   };
 
   return (
