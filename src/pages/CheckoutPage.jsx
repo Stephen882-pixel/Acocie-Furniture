@@ -131,7 +131,7 @@ const CheckoutPage = () => {
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="(555) 123-4567"
+                      placeholder="+254100000000"
                       required
                       value={formData.phone}
                       onChange={handleChange}
@@ -169,7 +169,7 @@ const CheckoutPage = () => {
                       <input
                         type="text"
                         name="city"
-                        placeholder="New York"
+                        placeholder="Nairobi"
                         required
                         value={formData.city}
                         onChange={handleChange}

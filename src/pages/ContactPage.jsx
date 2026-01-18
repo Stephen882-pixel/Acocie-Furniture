@@ -39,15 +39,15 @@ const ContactPage = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Furniture Street", "New York, NY 10001", "United States"],
+      details: ["123 Furniture Street", "Nairobi, NBO 10001", "Kenya"],
     },
     {
       icon: Phone,
       title: "Call Us",
       details: [
-        "Main: (555) 123-4567",
+        "Main: +254115539799",
         "Toll-Free: 1-800-FURNITURE",
-        "Fax: (555) 123-4568",
+        "Fax: +254115539799",
       ],
     },
     {
@@ -201,7 +201,7 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="(555) 123-4567"
+                      placeholder="+254100000000"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
                   </div>
@@ -286,7 +286,7 @@ const ContactPage = () => {
                       href="tel:+15551234567"
                       className="text-orange-500 hover:text-orange-600"
                     >
-                      (555) 123-4567
+                      +254115539799
                     </a>
                   </div>
                 </div>

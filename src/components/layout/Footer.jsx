@@ -48,7 +48,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2 text-gray-400">
               <li>Email: info@acocie.com</li>
-              <li>Phone: (555) 123-4567</li>
+              <li>Phone: +254115539799</li>
               <li>Hours: Mon-Fri 9AM-6PM</li>
             </ul>
           </div>

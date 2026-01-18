@@ -60,31 +60,31 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Sarah Johnson",
+      name: "Stephen Ondeyo",
       role: "Founder & CEO",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+        "/images/Steve.jpg",
       bio: "With over 15 years of experience in furniture design, Sarah founded Acocie to bring quality furniture to every home.",
     },
     {
-      name: "Michael Chen",
+      name: "Austin Chinoi",
       role: "Head of Design",
       image:
-        "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop",
+        "/images/Steve.jpg",
       bio: "Michael leads our design team, creating innovative furniture that combines style, comfort, and functionality.",
     },
     {
-      name: "Emily Rodriguez",
+      name: "Newton Odhiambo",
       role: "Operations Director",
       image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+        "/images/Steve.jpg",
       bio: "Emily ensures smooth operations and exceptional customer service across all our channels.",
     },
     {
-      name: "David Thompson",
+      name: "Paul Clement",
       role: "Sustainability Officer",
       image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+        "/images/Steve.jpg",
       bio: "David spearheads our sustainability initiatives, ensuring eco-friendly practices in all our processes.",
     },
   ];
@@ -100,7 +100,7 @@ const AboutPage = () => {
       year: "2016",
       title: "First Showroom",
       description:
-        "Opened our flagship showroom in New York, showcasing our complete furniture collection.",
+        "Opened our flagship showroom in Nairobi, showcasing our complete furniture collection.",
     },
     {
       year: "2018",
@@ -171,26 +171,28 @@ const AboutPage = () => {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Founded in 2014, Acocie Furnitures began with a simple
+                  Founded in 2014, Acocie Furnitures started with a simple
                   mission: to make high-quality, beautifully designed furniture
-                  accessible to everyone. What started as a small workshop in
-                  New York has grown into a trusted furniture brand serving
-                  thousands of happy customers across the country.
+                  accessible to everyone in Kenya. What began as a small
+                  workshop in Nairobi has grown into a trusted furniture brand
+                  serving thousands of happy customers across the country.
                 </p>
                 <p>
-                  Our founder, Sarah Johnson, was frustrated with the limited
-                  options available in the furniture market – either overpriced
-                  designer pieces or low-quality mass-produced items. She
+                  Our founder, Stephen Ondeyo, was frustrated with the limited
+                  options in the Kenyan furniture market – either overpriced
+                  designer pieces or low-quality mass-produced items. He
                   envisioned a company that could bridge this gap, offering
-                  premium furniture at fair prices.
+                  premium furniture at fair prices for Nairobi homes and
+                  offices.
                 </p>
                 <p>
-                  Today, we work directly with skilled craftsmen and sustainable
-                  suppliers to bring you furniture that combines timeless
-                  design, superior quality, and environmental responsibility.
-                  Every piece we create is thoughtfully designed to enhance your
-                  living space and stand the test of time.
+                  Today, we work directly with skilled local craftsmen and
+                  sustainable suppliers to bring you furniture that combines
+                  timeless design, superior quality, and environmental
+                  responsibility. Every piece we create is thoughtfully designed
+                  to enhance your living space and stand the test of time.
                 </p>
+
                 <p>
                   We're more than just a furniture company – we're a team
                   passionate about helping you create a home you love.

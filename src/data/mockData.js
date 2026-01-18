@@ -3,7 +3,7 @@ export const categories = [
     id: 1,
     name: 'Office Desks',
     slug: 'office-desks',
-    image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&h=300&fit=crop',
+    image: "/images/categories/office-desk.jpg",
     description: 'Ergonomic and stylish desks for your workspace',
     itemCount: 45
   },
