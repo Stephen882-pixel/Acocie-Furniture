@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ShoppingCart, Menu, X, User } from "lucide-react";
+import { ShoppingCart, Menu, X, User, Heart } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 import { useUser } from "../../context/UserContext";
+import { useWishlist } from "../../context/WishlistContext";
 
 const Header = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { getCartCount } = useCart();
   const { isAuthenticated } = useUser();
+  const { getWishlistCount } = useWishlist();
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -57,21 +59,8 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Right Side - Cart and Mobile Menu */}
+          {/* Right Side - Account, Wishlist, Cart and Mobile Menu */}
           <div className="flex items-center space-x-4">
-            {/* Cart Button */}
-            <button
-              onClick={() => handleNavigation("/cart")}
-              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
-            >
-              <ShoppingCart className="w-6 h-6 text-gray-700" />
-              {getCartCount() > 0 && (
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
-                  {getCartCount()}
-                </span>
-              )}
-            </button>
-
             {/* Account Button */}
             {isAuthenticated ? (
               <button
@@ -90,6 +79,32 @@ const Header = () => {
                 <span>Login</span>
               </button>
             )}
+
+            {/* Wishlist Button */}
+            <button
+              onClick={() => handleNavigation("/wishlist")}
+              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <Heart className="w-6 h-6 text-gray-700" />
+              {getWishlistCount() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
+                  {getWishlistCount()}
+                </span>
+              )}
+            </button>
+
+            {/* Cart Button */}
+            <button
+              onClick={() => handleNavigation("/cart")}
+              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <ShoppingCart className="w-6 h-6 text-gray-700" />
+              {getCartCount() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
+                  {getCartCount()}
+                </span>
+              )}
+            </button>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -115,15 +130,19 @@ const Header = () => {
               >
                 Home
               </button>
-
               <button
                 onClick={() => handleNavigation("/products")}
                 className="text-gray-600 hover:text-orange-500 text-left transition-colors"
               >
                 Products
               </button>
-
-              {/* ✅ ADD THIS */}
+              <button
+                onClick={() => handleNavigation("/wishlist")}
+                className="text-gray-600 hover:text-orange-500 text-left transition-colors flex items-center gap-2"
+              >
+                <Heart className="w-4 h-4" />
+                Wishlist {getWishlistCount() > 0 && `(${getWishlistCount()})`}
+              </button>
               {isAuthenticated ? (
                 <button
                   onClick={() => handleNavigation("/account")}
@@ -139,17 +158,15 @@ const Header = () => {
                   Login
                 </button>
               )}
-
               <button
                 onClick={() => handleNavigation("/about")}
                 className="text-gray-600 hover:text-orange-500 text-left transition-colors"
               >
                 About
               </button>
-
               <button
                 onClick={() => handleNavigation("/contact")}
-                className="text-gray-600 hover:text-orange-500 transition-colors"
+                className="text-gray-600 hover:text-orange-500 text-left transition-colors"
               >
                 Contact
               </button>
