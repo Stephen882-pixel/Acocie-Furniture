@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { ShoppingCart, Menu, X, User, Heart } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 import { useUser } from "../../context/UserContext";
-import { useWishlist } from "../../context/WishlistContext";
+import { useWishList } from "../../context/WishlistContext";
 
 const Header = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { getCartCount } = useCart();
   const { isAuthenticated } = useUser();
-  const { getWishlistCount } = useWishlist();
+  const { getWishListCount } = useWishList();
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -86,9 +86,9 @@ const Header = () => {
               className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
             >
               <Heart className="w-6 h-6 text-gray-700" />
-              {getWishlistCount() > 0 && (
+              {getWishListCount() > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
-                  {getWishlistCount()}
+                  {getWishListCount()}
                 </span>
               )}
             </button>
@@ -141,7 +141,7 @@ const Header = () => {
                 className="text-gray-600 hover:text-orange-500 text-left transition-colors flex items-center gap-2"
               >
                 <Heart className="w-4 h-4" />
-                Wishlist {getWishlistCount() > 0 && `(${getWishlistCount()})`}
+                Wishlist {getWishListCount() > 0 && `(${getWishListCount()})`}
               </button>
               {isAuthenticated ? (
                 <button

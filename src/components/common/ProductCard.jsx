@@ -2,14 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Star, Heart } from "lucide-react";
 import { useCart } from "../../context/CartContext";
-import { useWishlist } from "../../context/WishlistContext";
+import { useWishList } from "../../context/WishlistContext";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
-  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const { addToWishList, removeFromWishlist, isInWishList } = useWishList();
 
-  const inWishlist = isInWishlist(product.id);
+  const inWishlist = isInWishList(product.id);
 
   const handleCardClick = () => {
     navigate(`/product/${product.id}`);
@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
     if (inWishlist) {
       removeFromWishlist(product.id);
     } else {
-      addToWishlist(product);
+      addToWishList(product);
     }
   };
 

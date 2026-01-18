@@ -7,12 +7,12 @@ import StarRating from "../components/product/StarRating";
 
 const WishlistPage = () => {
   const navigate = useNavigate();
-  const { wishlistItems, removeFromWishlist, clearWishlist } = useWishList();
+  const { wishlistItems, removeFromWishList, clearWishlist } = useWishList();
   const { addToCart } = useCart();
 
   const handleAddToCart = (product) => {
     addToCart(product);
-    removeFromWishlist(product.id);
+    removeFromWishList(product.id);
   };
 
   const handleMoveAllToCart = () => {
@@ -109,7 +109,7 @@ const WishlistPage = () => {
 
                 {/* Remove Button */}
                 <button
-                  onClick={() => removeFromWishlist(item.id)}
+                  onClick={() => removeFromWishList(item.id)}
                   className="absolute top-2 right-2 w-10 h-10 bg-white hover:bg-red-50 rounded-full flex items-center justify-center shadow-md transition"
                 >
                   <Heart className="w-5 h-5 text-red-500 fill-current" />
@@ -165,7 +165,7 @@ const WishlistPage = () => {
                   </button>
 
                   <button
-                    onClick={() => removeFromWishlist(item.id)}
+                    onClick={() => removeFromWishList(item.id)}
                     className="w-full flex items-center justify-center gap-2 border-2 border-gray-300 text-gray-700 hover:border-red-500 hover:text-red-500 py-2 rounded-lg font-semibold transition"
                   >
                     <Trash2 className="w-4 h-4" />
