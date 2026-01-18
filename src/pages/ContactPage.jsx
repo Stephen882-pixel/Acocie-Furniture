@@ -90,7 +90,7 @@ const ContactPage = () => {
     {
       question: "Do you have a showroom?",
       answer:
-        "Yes, we have a showroom at our New York location where you can view our furniture in person. Our showroom is open Monday through Saturday. Please call ahead to schedule an appointment with one of our design consultants.",
+        "Yes, we have a showroom at our Nairobi location where you can view our furniture in person. Our showroom is open Monday through Saturday. Please call ahead to schedule an appointment with one of our design consultants.",
     },
     {
       question: "What payment methods do you accept?",
@@ -264,7 +264,7 @@ const ContactPage = () => {
                   <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-2" />
                   <p className="text-gray-600">Map Location</p>
                   <p className="text-sm text-gray-500">
-                    123 Furniture Street, New York
+                    123 Furniture Street, Nairobi 
                   </p>
                 </div>
               </div>
