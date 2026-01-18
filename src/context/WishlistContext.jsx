@@ -28,4 +28,28 @@ export const WishlistProvider =  ({ children }) => {
     const removeFromWishList = (productId) => {
         setWishlistItems(prevItems => prevItems.filter(item => item.id !== productId));
     };
+
+    const isInWishList = (productId) => {
+        return wishlistItems.some(item => item.id === productId);
+    };
+
+    const clearWishList = () => {
+        setWishlistItems([]);
+    };
+
+    const getWishListCount = () => {
+        return wishlistItems.length;
+    };
+
+    const value = {
+        wishlistItems,
+        addToWishList,
+        removeFromWishList,
+        isInWishList,
+        clearWishList,
+        getWishListCount
+    };
+
+    return <WishlistContext.Provider value={value}>{children}</WishlistContext.Provider>;
 }
+
