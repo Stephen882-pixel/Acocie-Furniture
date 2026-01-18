@@ -14,6 +14,7 @@ import AccountPage from "./pages/AccountPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import NewsletterModal from "./components/common/NewsletterModal";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
 
                 {/* About Page  */}
                 <Route path="/about" element={<AboutPage />} />
+
+                {/* 404 Catch-All Route - Must be last */}
+                <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </main>
 
