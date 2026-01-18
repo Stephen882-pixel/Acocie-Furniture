@@ -67,7 +67,7 @@ const ProductDetailPage = () => {
   };
 
   const handleWishlistToggle = () => {
-    if(inWishlist){
+    if (inWishlist) {
       removeFromWishlist(product.id);
     } else {
       addToWishlist(product);
@@ -188,6 +188,20 @@ const ProductDetailPage = () => {
                 >
                   <ShoppingCart className="w-5 h-5" />
                   {product.inStock ? "Add to Cart" : "Out of Stock"}
+                </button>
+
+                <button
+                  onClick={handleWishlistToggle}
+                  className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-lg font-semibold transition border-2 ${
+                    inWishlist
+                      ? "bg-red-50 border-red-500 text-red-500 hover:bg-red-100"
+                      : "bg-white border-gray-300 text-gray-700 hover:border-orange-500 hover:text-orange-500"
+                  }`}
+                >
+                  <Heart
+                    className={`w-5 h-5 ${inWishlist ? "fill-current" : ""}`}
+                  />
+                  {inWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
                 </button>
               </div>
 
