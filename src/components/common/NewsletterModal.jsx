@@ -39,7 +39,7 @@ const NewsletterModal = () => {
         <div className="p-8">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Welcome! 🎉
+              Welcome! 
             </h2>
             <p className="text-gray-600">
               Get 10% off your first order when you subscribe to our newsletter
