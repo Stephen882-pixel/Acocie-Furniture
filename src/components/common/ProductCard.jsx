@@ -1,26 +1,53 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Star } from "lucide-react";
+import { Star, Heart } from "lucide-react";
 import { useCart } from "../../context/CartContext";
+import { useWishlist } from "../../context/WishlistContext";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+  const inWishlist = isInWishlist(product.id);
 
   const handleCardClick = () => {
     navigate(`/product/${product.id}`);
   };
 
   const handleAddToCart = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     addToCart(product);
+  };
+
+  const handleWishlistToggle = (e) => {
+    e.stopPropagation();
+    if (inWishlist) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
   };
 
   return (
     <div
       onClick={handleCardClick}
-      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
+      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group relative"
     >
+      {/* Wishlist Button */}
+      <button
+        onClick={handleWishlistToggle}
+        className="absolute top-4 right-4 z-10 w-10 h-10 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md transition"
+      >
+        <Heart
+          className={`w-5 h-5 transition ${
+            inWishlist
+              ? "text-red-500 fill-current"
+              : "text-gray-400 hover:text-red-500"
+          }`}
+        />
+      </button>
+
       {/* Product Image */}
       <div className="relative overflow-hidden">
         <img
@@ -29,9 +56,9 @@ const ProductCard = ({ product }) => {
           className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
         />
 
-        {/* Product Tag (Bestseller, Sale, etc.) */}
+        {/* Product Tag */}
         {product.tag && (
-          <span className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+          <span className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
             {product.tag}
           </span>
         )}
